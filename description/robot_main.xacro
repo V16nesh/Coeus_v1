@@ -42,7 +42,7 @@
     <joint name = "r_wheel_joint" type = "continuous">
         <parent link = "base_link"/>
         <child link = "r_wheel"/>
-        <origin xyz = "0.135 -0.1025 0.01727" rpy = "${pi/2} 0 0"/>
+        <origin xyz = "0.135 -0.1025 0.03454" rpy = "${pi/2} 0 0"/>
         <axis xyz = "0 0 -1"/>
     </joint>
 
@@ -61,7 +61,7 @@
     <joint name = "l_wheel_joint" type = "continuous">
         <parent link = "base_link"/>
         <child link = "l_wheel"/>
-        <origin xyz = "0.135 0.1025 0.01727" rpy = "-${pi/2} 0 0"/>
+        <origin xyz = "0.135 0.1025 0.03454" rpy = "-${pi/2} 0 0"/>
         <axis xyz = "0 0 1"/>
     </joint>
 
@@ -69,6 +69,42 @@
         <visual>    
             <geometry>
                 <cylinder radius = "0.04" length = "0.037"/>
+            </geometry>
+            <material name = "black"/>
+        </visual>
+    </link>
+
+    <!-- left cylinder-->
+
+    <joint name = "l_cylinder_joint" type = "fixed">
+       <parent link = "body"/>
+       <child link = "l_cylinder"/>
+       <origin xyz = "0.045 0.059 0.010615" rpy = "0 0 0"/>
+
+    </joint>
+
+    <link name = "l_cylinder">
+         <visual>
+            <geometry>
+                <cylinder radius = "0.015" length = "0.02123"/>
+            </geometry>
+            <material name = "black"/>
+        </visual>
+    </link>
+
+     <!-- right cylinder-->
+
+    <joint name = "r_cylinder_joint" type = "fixed">
+       <parent link = "body"/>
+       <child link = "r_cylinder"/>
+       <origin xyz = "0.045 -0.059 0.010615" rpy = "0 0 0"/>
+
+    </joint>
+
+    <link name = "r_cylinder">
+         <visual>
+            <geometry>
+                <cylinder radius = "0.015" length = "0.02123"/>
             </geometry>
             <material name = "black"/>
         </visual>
