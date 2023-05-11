@@ -30,7 +30,7 @@
         <visual>
             <origin xyz = "0.135 0 0.07"/>
             <geometry>
-                <box size = "0.27 0.168 0.14" /> 
+                <box size = "0.27 0.168 0.10577" /> 
             </geometry>
             
             <material name = "white"/>
@@ -42,7 +42,7 @@
     <joint name = "r_wheel_joint" type = "continuous">
         <parent link = "base_link"/>
         <child link = "r_wheel"/>
-        <origin xyz = "0.09647 -0.1025 0.01727" rpy = "${pi/2} 0 0"/>
+        <origin xyz = "0.135 -0.1025 0.01727" rpy = "${pi/2} 0 0"/>
         <axis xyz = "0 0 -1"/>
     </joint>
 
@@ -61,7 +61,7 @@
     <joint name = "l_wheel_joint" type = "continuous">
         <parent link = "base_link"/>
         <child link = "l_wheel"/>
-        <origin xyz = "0.09647 0.1025 0.01727" rpy = "-${pi/2} 0 0"/>
+        <origin xyz = "0.135 0.1025 0.01727" rpy = "-${pi/2} 0 0"/>
         <axis xyz = "0 0 1"/>
     </joint>
 
