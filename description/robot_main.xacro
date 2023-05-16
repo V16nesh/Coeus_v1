@@ -47,6 +47,10 @@
         </xacro:inertial_box>
     </link>
 
+    <gazebo reference="body">
+        <material>Gazebo/White</material>
+    </gazebo>
+
     <!-- right wheel link -->
 
     <joint name = "r_wheel_joint" type = "continuous">
@@ -75,6 +79,10 @@
         </xacro:inertial_cylinder>
 
     </link>
+
+    <gazebo reference="r_wheel">
+        <material>Gazebo/Black</material>
+    </gazebo>
 
 
     <!-- left wheel link -->
@@ -105,16 +113,20 @@
         </xacro:inertial_cylinder>
     </link>
 
+    <gazebo reference="l_wheel">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
     <!-- cylinder-->
 
-    <joint name = "l_cylinder_joint" type = "fixed">
+    <joint name = "cylinder_joint" type = "fixed">
        <parent link = "body"/>
-       <child link = "l_cylinder"/>
+       <child link = "cylinder"/>
        <origin xyz = "0.045 0 0.010615" rpy = "0 0 0"/>
 
     </joint>
 
-    <link name = "l_cylinder">
+    <link name = "cylinder">
          <visual>
             <geometry>
                 <cylinder radius = "0.0075" length = "0.01023"/>
@@ -135,16 +147,20 @@
         
     </link>
 
+    <gazebo reference="cylinder">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
 
     <!-- ball castor-->
 
-    <joint name = "l_castor_joint" type = "fixed">
-        <parent link = "l_cylinder"/>
-        <child link = "l_castor"/>
+    <joint name = "castor_joint" type = "fixed">
+        <parent link = "cylinder"/>
+        <child link = "castor"/>
         <origin xyz = "0 0 -0.004" rpy = "0 0 0"/>
     </joint>
 
-    <link name = "l_castor">
+    <link name = "castor">
          <visual>
             <geometry>
                 <sphere radius = "0.0075" />
@@ -163,6 +179,14 @@
         </xacro:inertial_sphere>
 
     </link>
+
+    <gazebo reference="castor">
+        <material>Gazebo/Orange</material>
+        <mu1 value="0.001"/>
+        <mu2 value="0.001"/>
+    </gazebo>
+
+
 
 
     
